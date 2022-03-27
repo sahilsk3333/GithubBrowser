@@ -2,7 +2,6 @@ package com.sahilpc.githubbrowser.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.sahilpc.githubbrowser.api.RepoService
 import com.sahilpc.githubbrowser.db.RepoDatabase
 import com.sahilpc.githubbrowser.models.Repo
@@ -17,9 +16,6 @@ class RepoRepository (
     private val applicationContext: Context
     ){
 
-    private val repoLiveData = MutableLiveData<Repo>()
-    val repoData : LiveData<Repo>
-    get() = repoLiveData
 
     fun getList():LiveData<List<Repo>>{
         return repoDatabase.repoDao().getRepos()
@@ -40,7 +36,6 @@ class RepoRepository (
             val result = repoService.getRepo(repowner,repo)
             if(result.body() != null){
                 repoDatabase.repoDao().addRepo(result.body()!!)
-                repoLiveData.postValue(result.body())
             }
         }
 

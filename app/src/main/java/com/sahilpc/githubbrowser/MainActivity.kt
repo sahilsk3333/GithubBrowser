@@ -32,9 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel = ViewModelProvider(this,MainViewModelFactory(repository)).get(MainViewModel::class.java)
 
-        mainViewModel.repo.observe(this, Observer {
-            Toast.makeText(this@MainActivity, it.description, Toast.LENGTH_SHORT).show()
-        })
+
 
 
         val recyclerview = findViewById<RecyclerView>(R.id.mainRv)

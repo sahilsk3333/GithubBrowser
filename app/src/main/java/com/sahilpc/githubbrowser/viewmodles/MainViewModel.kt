@@ -17,8 +17,7 @@ class MainViewModel(private val repository: RepoRepository) : ViewModel(){
         }
     }
 
-    val repo : LiveData<Repo>
-    get() = repository.repoData
+
 
     fun getRepoList(): LiveData<List<Repo>> {
         return repository.getList()

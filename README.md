@@ -1,7 +1,7 @@
 
 # GithubBrowser
 
-An Android application That helps you to track your favorite Github Repositories is easy way on your Android device.
+An Android application That helps you to track your favorite Github Repositories in easy way on your Android device.
 
 Retrofit Library used with RoomDatabse for Offline Cache and also follows MVVM Pattern
 
